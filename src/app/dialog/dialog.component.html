@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Add Account</h1>
+<div mat-dialog-content>
+    <form [formGroup]="accountForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Account Name</mat-label>
+            <input formControlName="accountCard" matInput placeholder="Placeholder">
+          </mat-form-field>
+    
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="emailCard" matInput placeholder="Placeholder">
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input formControlName="passCard" matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+    
+          <mat-form-field appearance="outline">
+            <mat-label>Url</mat-label>
+            <input formControlName="urlCard" matInput placeholder="Placeholder">
+          </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+<button mat-raised-button color="warn" mat-dialog-close>Close</button>
+<button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addAccount()" >{{actionBtn}}</button>
+</div>

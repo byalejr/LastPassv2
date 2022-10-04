@@ -21,7 +21,7 @@ export class DialogComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    //when dialgo opens the formbuilder group data and validators
     this.accountForm = this.formBuilder.group({
       accountCard: ['', Validators.required],
       emailCard: ['', Validators.required],
@@ -31,6 +31,7 @@ export class DialogComponent implements OnInit {
 
     console.log("la data que llego es: ", this.editData)
 
+    //if data is diff 1, bring data of dataDialog and this can edit
     if (this.editData != 1) {
       this.actionBtn = "Update";
       this.accountForm.controls['accountCard'].setValue(this.editData.accountCard);
@@ -45,13 +46,15 @@ export class DialogComponent implements OnInit {
 
 
   //add new account
+  //if button id is 1 shows button to add
+  //else shows button to update
   addAccount(i: number) {
     console.log("number es en addAccount:", i)
     if (i == 1) {
       this.actionBtn = "Save";
       if (this.accountForm.valid) {
       
-
+        //if everithing is ok shows alert for succes
         this.api.postAccount(this.accountForm.value)
           .subscribe({
             next: (res) => {
@@ -59,6 +62,7 @@ export class DialogComponent implements OnInit {
               this.accountForm.reset();
               this.dialogRef.close('save');
             },
+            //if everithing is not ok shows alert for succes
             error: () => {
               alert("error while try to add")
             }

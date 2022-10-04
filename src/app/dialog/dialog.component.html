@@ -1,7 +1,7 @@
 <!-- dialog shows add and edit account -->
 
 <h1 mat-dialog-title>Add Account</h1>
-
+<!-- Form to add and pudate account -->
 <div mat-dialog-content>
   <form [formGroup]="accountForm">
     <mat-form-field appearance="outline">
@@ -33,10 +33,11 @@
 
   <button mat-raised-button color="warn" mat-dialog-close>Close</button>
 
-
+  <!-- button to update -->
   <span class="mat-class" *ngIf="editData!=1; else save">
     <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addAccount(0)">{{actionBtn}}</button>
   </span>
+  <!-- button to add account -->
   <ng-template #save>
     <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addAccount(1)">{{actionBtn}}</button>
   </ng-template>

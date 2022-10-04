@@ -32,8 +32,8 @@ export class AppComponent implements OnInit {
   }
 
 
+  //dialog component send data to dialog component
   openDialog(data: number) {
-
     if (data == 1) {
       this.dialog.open(DialogComponent, {
         width: '30%',
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
     }
   }
 
- 
+ //execute to send all accounts
   getAllAccounts() {
     this.api.getAccount()
       .subscribe({
@@ -99,12 +99,13 @@ export class AppComponent implements OnInit {
   }
 
 
+  //the filter 
   applyFilter(event: Event) {
 
     const filterValue = ((event.target as HTMLInputElement).value).toLowerCase();
 
     if (filterValue.length < 1) {
-      console.log("no hay datos para buscar")
+      console.log("no acc to search")
       this.source = this.sourceOriginal
 
     }

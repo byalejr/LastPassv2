@@ -1,16 +1,61 @@
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+      display: flex;
+      padding: 1rem;
+      transition-property: transform;
+      transition-duration: 1s;
+
+      &:hover {
+          animation-duration: 100ms;
+          background-color: rgb(255, 250, 234);
+          box-shadow: 0 0 10px #719ece;
+          transform: scale(1.02);
+      }
   }
-  table {
-    width: 100%;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  .container{
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+}
+
+.mat-class {
+  max-width: 400px;
+}
+
+.precio {
+  font-size: 20px;
+  text-align: right;
+}
+
+p {
+  display: block;
+  max-width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,23 +1,56 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment'
+interface Usuario {
+
+  accountCard: string,
+  emailCard: string,
+  id: number,
+  passCard: string
+  urlCard: string,
+};
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor(private http : HttpClient) { }
+  url = environment.url
 
-  postAccount(data : any){
-    return this.http.post<any>("http://localhost:3000/accountList/",data);
+  constructor(private http: HttpClient) { }
+
+  // postAccount(data: any) {
+  //   return this.http.post<Usuario>(this.url + '/usuarios', data)
+  // }
+  // getAccount() {
+  //   return this.http.get<Usuario>(this.url + '/usuarios')
+  // }
+  // //update
+  // putAccount(data: any, id: number) {
+  //   return this.http.put<Usuario>(`${this.url}/usuarios/${id}`, data)
+  // }
+  // deleteAccount(id: number) {
+  //   return this.http.delete<Usuario>(`${this.url}/usuarios/${id}`)
+  // }
+
+
+
+  //
+
+  postAccount(data: any) {
+    return this.http.post<any>("http://localhost:3000/accountList/", data);
   }
-  getAccount(){
+  getAccount() {
     return this.http.get<any>("http://localhost:3000/accountList/");
   }
-  putAccount(data : any, id : number){
-    return this.http.put<any>("http://localhost:3000/accountList/"+id, data);
+  putAccount(data: any, id: number) {
+    return this.http.put<any>("http://localhost:3000/accountList/" + id, data);
   }
-  deleteAccount(id:number){
-    return this.http.delete<any>("http://localhost:3000/accountList/"+id);
+  deleteAccount(id: number) {
+    return this.http.delete<any>("http://localhost:3000/accountList/" + id);
   }
+
+
 }

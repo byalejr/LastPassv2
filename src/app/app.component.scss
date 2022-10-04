@@ -1,3 +1,9 @@
+h1{
+  font-size: 35px;
+  position: relative;
+  text-align: center;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -45,6 +51,7 @@ table {
 
 .mat-class {
   max-width: 400px;
+  max-height: 200px;
 }
 
 p {
@@ -53,4 +60,20 @@ p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+}
+
+mat-card-content{
+  font-size: 13px;
+}
+
+.mat-card{
+  height: 150px;
+  width: 300px;
+}
+
+.mat-form-field {
+  font-size: 20px;
+  width: 100%;
+  position: relative;
 }

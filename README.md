@@ -2,7 +2,7 @@
 
 this solution was made in Angular CLI with angular server as Database
 i decide than the best way to make this solution will be using components one for the main windows and a dialog when will be the form 
-and also use the angular service like api.service this gonna manage the backend this will create and connect to the database this will be all local storage
+and also use the angular service like api.service this gonna manage the backend this will create and connect to the database this will be all local storage 
 
 
 
@@ -12,6 +12,8 @@ And for coding used Visual Studio Code
 
 ## Commands to run this solution
 npm i
+
+npm install -g json-server (just if ds.json doesnt work)
 
 ng serve -o
 

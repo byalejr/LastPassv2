@@ -21,24 +21,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  // postAccount(data: any) {
-  //   return this.http.post<Usuario>(this.url + '/usuarios', data)
-  // }
-  // getAccount() {
-  //   return this.http.get<Usuario>(this.url + '/usuarios')
-  // }
-  // //update
-  // putAccount(data: any, id: number) {
-  //   return this.http.put<Usuario>(`${this.url}/usuarios/${id}`, data)
-  // }
-  // deleteAccount(id: number) {
-  //   return this.http.delete<Usuario>(`${this.url}/usuarios/${id}`)
-  // }
-
-
-
-  //
-
+ 
   postAccount(data: any) {
     return this.http.post<any>("http://localhost:3000/accountList/", data);
   }
